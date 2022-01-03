@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func calcular(_ sender: Any) {
         
-        if let weight = Double(tfPeso.text!)  , let height = Double(tfAltura.text!) {
+        if let weight = Double(tfPeso.text!.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil))  , let height = Double(tfAltura.text!.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil)) {
             imc = weight / (height*height)
             showResults()
         }
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
                 resultado = "Obesidade"
                 image = "obesidade"
         }
-        lbResultado.text = resultado
+        lbResultado.text = "\(Int(imc)): \(resultado)"
         ivResultado.image = UIImage(named: image)
         viResultado.isHidden = false
         view.endEditing(true)
