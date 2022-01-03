@@ -36,14 +36,61 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex.: 75" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v3G-Eu-16b">
                                 <rect key="frame" x="72" y="185.5" width="71.5" height="34"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="71.5" id="KWY-uT-rsu"/>
                                     <constraint firstAttribute="width" constant="71.5" id="Weg-mp-yic"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71.5" id="Zpm-vx-xBi"/>
                                     <constraint firstAttribute="height" constant="34" id="qDX-vQ-mIC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-GU-4Nx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cálculo do IMC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YA-6f-KX7">
+                                <rect key="frame" x="33.5" y="20" width="308" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="md7-YW-6zh"/>
+                                    <constraint firstAttribute="height" constant="47" id="rTX-Gd-JB6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.99627405405044556" green="0.93367552757263184" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra o seu Índice de Massa Corporal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKr-5c-URZ">
+                                <rect key="frame" x="31.5" y="77" width="312" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura (m)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34H-i5-OSu">
+                                <rect key="frame" x="233" y="157.5" width="69" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.99560552835464478" green="0.99560552835464478" blue="0.99506920576095581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex.: 1,80" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIQ-CM-lN1">
+                                <rect key="frame" x="232" y="185.5" width="71" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="lI2-3V-ps8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-ba-69I">
+                                <rect key="frame" x="59" y="234.5" width="257" height="51"/>
+                                <color key="backgroundColor" red="0.99322730302810669" green="0.93904387950897217" blue="0.0058011994697153568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="6nd-tM-gvD"/>
+                                    <constraint firstAttribute="height" constant="51" id="as1-8U-caF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calcular">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="calcular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IX6-gX-nQ6"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-GU-4Nx">
                                 <rect key="frame" x="0.0" y="305.5" width="375" height="361.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPU-Gl-nsR">
@@ -82,49 +129,6 @@
                                     <constraint firstItem="iXv-Ep-qfE" firstAttribute="centerX" secondItem="F0w-GU-4Nx" secondAttribute="centerX" id="sN1-p2-xsz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cálculo do IMC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YA-6f-KX7">
-                                <rect key="frame" x="33.5" y="20" width="308" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="308" id="md7-YW-6zh"/>
-                                    <constraint firstAttribute="height" constant="47" id="rTX-Gd-JB6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.99627405405044556" green="0.93367552757263184" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra o seu Índice de Massa Corporal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKr-5c-URZ">
-                                <rect key="frame" x="31.5" y="77" width="312" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura (m)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34H-i5-OSu">
-                                <rect key="frame" x="233" y="157.5" width="69" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.99560552835464478" green="0.99560552835464478" blue="0.99506920576095581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex.: 1,80" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIQ-CM-lN1">
-                                <rect key="frame" x="232" y="185.5" width="71" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="lI2-3V-ps8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-ba-69I">
-                                <rect key="frame" x="59" y="234.5" width="257" height="51"/>
-                                <color key="backgroundColor" red="0.99322730302810669" green="0.93904387950897217" blue="0.0058011994697153568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="257" id="6nd-tM-gvD"/>
-                                    <constraint firstAttribute="height" constant="51" id="as1-8U-caF"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Calcular">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
-                                    <color key="baseForegroundColor" systemColor="systemTealColor"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.32941176470588235" green="0.67450980392156867" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -155,6 +159,13 @@
                             <constraint firstItem="fKr-5c-URZ" firstAttribute="top" secondItem="6YA-6f-KX7" secondAttribute="bottom" constant="10" id="wuw-Gr-iJu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ivResultado" destination="hn0-eY-66V" id="BX5-WP-clC"/>
+                        <outlet property="lbResultado" destination="PPU-Gl-nsR" id="3kt-CL-u67"/>
+                        <outlet property="tfAltura" destination="TIQ-CM-lN1" id="MP4-A6-u8a"/>
+                        <outlet property="tfPeso" destination="v3G-Eu-16b" id="7k9-t5-JhL"/>
+                        <outlet property="viResultado" destination="F0w-GU-4Nx" id="YBr-K2-xTY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
